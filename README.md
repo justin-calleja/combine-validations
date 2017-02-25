@@ -1,4 +1,4 @@
-# `combine-validations` [![NPM version][version-image]][version-url] [![Js Standard Style][standard-image]][standard-url]
+# `combine-validations` [![Build status][travis-image]][travis-url] [![NPM version][version-image]][version-url] [![Js Standard Style][standard-image]][standard-url]
 
 Provides a way to easily combine [Folktale Validations](http://docs.folktalejs.org/en/latest/api/data/validation/Validation.html).
 
@@ -87,6 +87,9 @@ A Validation is a value of [Folktale](http://docs.folktalejs.org/en/latest/index
 [Validation](http://docs.folktalejs.org/en/latest/api/data/validation/Validation.html) type.
 
 **Kind**: inner typedef of <code>[@justinc/combine-validations](#module_@justinc/combine-validations)</code>  
+
+[travis-image]: https://img.shields.io/travis/justin-calleja/combine-validations.svg?style=flat-square
+[travis-url]: https://travis-ci.org/justin-calleja/combine-validations
 
 [version-image]: https://img.shields.io/npm/v/@justinc/combine-validations.svg?style=flat-square
 [version-url]: https://npmjs.org/package/@justinc/combine-validations
