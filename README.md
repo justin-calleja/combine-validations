@@ -6,7 +6,7 @@ Provides a way to easily combine [Folktale Validations](http://docs.folktalejs.o
 
 `npm i @justinc/combine-validations`
 
-### Example of usage
+### Demo
 
 (See tests for more example usage)
 
