@@ -1,4 +1,4 @@
-# `combine-validations` [![Build status][travis-image]][travis-url] [![NPM version][version-image]][version-url] [![Js Standard Style][standard-image]][standard-url]
+# `combine-validations` [![Build status][travis-image]][travis-url] [![NPM version][version-image]][version-url] [![Semantic Release][semantic-release-image]][semantic-release-url] [![Js Standard Style][standard-image]][standard-url]
 
 Provides a way to easily combine [Folktale Validations](http://docs.folktalejs.org/en/latest/api/data/validation/Validation.html).
 
@@ -94,5 +94,8 @@ A Validation is a value of [Folktale](http://docs.folktalejs.org/en/latest/index
 [version-image]: https://img.shields.io/npm/v/@justinc/combine-validations.svg?style=flat-square
 [version-url]: https://npmjs.org/package/@justinc/combine-validations
 
-[standard-image]: https://img.shields.io/badge/code-standard-brightgreen.svg?style=flat-square
+[semantic-release-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square
+[semantic-release-url]: https://github.com/semantic-release/semantic-release
+
+[standard-image]: https://img.shields.io/badge/code-standard-yellow.svg?style=flat-square
 [standard-url]: https://github.com/feross/standard
