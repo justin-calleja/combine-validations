@@ -66,19 +66,19 @@ console.log({v1, v2, v3, v4})
 ## @justinc/combine-validations
 
 * [@justinc/combine-validations](#module_@justinc/combine-validations)
-    * [~combineValidations([validationsIterator])](#module_@justinc/combine-validations..combineValidations) ⇒ <code>Validation</code>
+    * [~combineValidations([iterableOfValidations])](#module_@justinc/combine-validations..combineValidations) ⇒ <code>Validation</code>
     * [~Validation](#module_@justinc/combine-validations..Validation) : <code>Object</code>
 
 <a name="module_@justinc/combine-validations..combineValidations"></a>
 
-### @justinc/combine-validations~combineValidations([validationsIterator]) ⇒ <code>Validation</code>
+### @justinc/combine-validations~combineValidations([iterableOfValidations]) ⇒ <code>Validation</code>
 **Kind**: inner method of <code>[@justinc/combine-validations](#module_@justinc/combine-validations)</code>  
 **Returns**: <code>Validation</code> - The combined Validations as a single Validation  
 **See**: Validation  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| [validationsIterator] | <code>Iterator.&lt;Validation&gt;</code> | <code>[]</code> | The validations to combine |
+| [iterableOfValidations] | <code>Iterable.&lt;Validation&gt;</code> | <code>[]</code> | The validations to combine |
 
 <a name="module_@justinc/combine-validations..Validation"></a>
 
