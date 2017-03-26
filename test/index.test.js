@@ -1,6 +1,8 @@
 import test from 'ava'
-import Validation from 'data.validation'
-import combineValidations from '..'
+import Validation from 'folktale/data/validation'
+import combineV from '..'
+
+const combineValidations = combineV(Validation)
 
 const { Success, Failure } = Validation
 
@@ -29,21 +31,21 @@ test('Should return Success of each Validation if all are successful', t => {
     noEndsWith('?')(input),
     noLongerThan(50)(input)
   ])
-  t.true(validation.isSuccess)
+  t.true(Success.hasInstance(validation))
   const successes = validation.merge()
   t.deepEqual(successes, [ 'prefix ok', 'suffix ok', true ])
 })
 
 test('Should return a Success with an empty array if no validations are given', t => {
   const validation = combineValidations()
-  t.true(validation.isSuccess)
+  t.true(Success.hasInstance(validation))
   const successes = validation.merge()
   t.deepEqual(successes, [])
 })
 
 test('Should return a Success with an empty array if an empty array is given', t => {
   const validation = combineValidations([])
-  t.true(validation.isSuccess)
+  t.true(Success.hasInstance(validation))
   const successes = validation.merge()
   t.deepEqual(successes, [])
 })
@@ -56,7 +58,7 @@ test('Should work with iterables not just arrays', t => {
     yield noEndsWith('?')(input)
   }
   const validation = combineValidations(iterable)
-  t.true(validation.isSuccess)
+  t.true(Success.hasInstance(validation))
   const successes = validation.merge()
   t.deepEqual(successes, [ 'prefix ok', 'suffix ok' ])
 })
@@ -68,7 +70,7 @@ test('Should be able to combine errors when using a Failure of Array<Error>', t 
     noEndsWith('d')(input),
     noLongerThan(5)(input)
   ])
-  t.true(validation.isFailure)
+  t.true(Failure.hasInstance(validation))
   const errors = validation.merge()
   t.is(errors.length, 3)
   t.true(errors[0].message.startsWith('Prefix Error:'))
@@ -83,7 +85,7 @@ test('Should be able to combine errors but ignore those which pass', t => {
     noEndsWith('!')(input),
     noLongerThan(5)(input)
   ])
-  t.true(validation.isFailure)
+  t.true(Failure.hasInstance(validation))
   const errors = validation.merge()
   t.is(errors.length, 2)
   t.true(errors[0].message.startsWith('Prefix Error:'))

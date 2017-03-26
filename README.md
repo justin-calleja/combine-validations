@@ -2,6 +2,10 @@
 
 Provides a way to easily combine [Folktale Validations](http://docs.folktalejs.org/en/latest/api/data/validation/Validation.html).
 
+As of v2, the Validation ADT is passed in as the first argument. This gives back a function which works the same as the main function exported by this package in v1.
+
+This removes this package's dependency on [data.validation](https://github.com/folktale/data.validation) and allows you to work with the Validation in [Folktale 2 and beyond](https://github.com/origamitower/folktale).
+
 ## Install
 
 `npm i @justinc/combine-validations`
@@ -11,10 +15,11 @@ Provides a way to easily combine [Folktale Validations](http://docs.folktalejs.o
 (See tests for more example usage)
 
 ```js
-const Validation = require('data.validation')
-const combineValidations = require('@justinc/combine-validations')
+const Validation = require('folktale/data/validation')
+const combineV = require('@justinc/combine-validations')
 
 const { Success, Failure } = Validation
+const combineValidations = combineV(Validation)
 
 function noStartsWith (prefix) {
   return arg => arg.startsWith(prefix)
@@ -66,18 +71,22 @@ console.log({v1, v2, v3, v4})
 ## @justinc/combine-validations
 
 * [@justinc/combine-validations](#module_@justinc/combine-validations)
-    * [~combineValidations([iterableOfValidations])](#module_@justinc/combine-validations..combineValidations) ⇒ <code>Validation</code>
+    * [~combineValidations([Validation], [iterableOfValidations])](#module_@justinc/combine-validations..combineValidations) ⇒ <code>Validation</code>
     * [~Validation](#module_@justinc/combine-validations..Validation) : <code>Object</code>
 
 <a name="module_@justinc/combine-validations..combineValidations"></a>
 
-### @justinc/combine-validations~combineValidations([iterableOfValidations]) ⇒ <code>Validation</code>
+### @justinc/combine-validations~combineValidations([Validation], [iterableOfValidations]) ⇒ <code>Validation</code>
+As of v2, combine-validations takes the Validation ADT implementation to use as an argument.
+This function is curried.
+
 **Kind**: inner method of <code>[@justinc/combine-validations](#module_@justinc/combine-validations)</code>  
 **Returns**: <code>Validation</code> - The combined Validations as a single Validation  
 **See**: Validation  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
+| [Validation] | <code>Validation</code> |  | The Validation ADT to use |
 | [iterableOfValidations] | <code>Iterable.&lt;Validation&gt;</code> | <code>[]</code> | The validations to combine |
 
 <a name="module_@justinc/combine-validations..Validation"></a>
